@@ -29,6 +29,12 @@ function App() {
     setToDO(updatedList);
   }
 
+  const handleKeyDown =(e)=>{
+    if(e.key === "Enter"){
+
+      onAddToDo()
+    }
+  }
   return (
     <>
       <div>
@@ -36,6 +42,7 @@ function App() {
           value={text}
           onChange={enterText}
           type="search"
+            onKeyDown={handleKeyDown}
           placeholder="enter your to do"
         />
         <button onClick={onAddToDo}>Add</button>
